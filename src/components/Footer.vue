@@ -1,10 +1,9 @@
 <script setup>
 import { Icon } from '@iconify/vue';
-import LogoUrl from '@/assets/images/logosvg.svg';
 
 const socialMediaLinks = [
-  { icon: 'mdi:facebook', url: 'https://www.facebook.com/yourpage' },
-  { icon: 'mdi:instagram', url: 'https://www.instagram.com/yourprofile' },
+  { icon: 'mdi:facebook', url: 'https://www.facebook.com/share/1BF5tGudW9/?mibextid=wwXIfr' },
+  { icon: 'mdi:instagram', url: 'https://www.instagram.com/decodoc20?igsh=d2VsMmNoajN2MmZu' },
   { icon: 'mdi:whatsapp', url: 'https://wa.me/yourphonenumber' },
 ];
 

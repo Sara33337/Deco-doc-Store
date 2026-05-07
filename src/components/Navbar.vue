@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import LogoUrl from '@/assets/images/logosvg.svg';
 import { Icon } from '@iconify/vue';
 const navBarItems = [{
     name : 'الرئيسية',
