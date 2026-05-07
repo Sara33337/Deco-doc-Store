@@ -14,6 +14,8 @@ const navLinks = [
   { name: 'خدماتنا', href: '#services' },
   { name: 'آراء العملاء', href: '#contact' },
 ];
+
+const logoImage = '/images/logosvg.svg';
 </script>
 
 <template>
@@ -43,7 +45,7 @@ const navLinks = [
 
       <div class="flex flex-col items-center gap-4">
         <div class="mx-3 md:mx-0">
-        <img :src="LogoUrl" alt="deco-doc logo" class="md:w-25 md:h-17 w-20 h-15 object-contain ">
+        <img :src="logoImage" alt="deco-doc logo" class="md:w-25 md:h-17 w-20 h-15 object-contain ">
       </div>
 
         <p class="text-lg leading-relaxed max-w-63">
