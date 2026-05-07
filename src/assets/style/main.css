@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --font-sans: "Cairo", ui-sans-serif, system-ui, sans-serif;
+  --color-main: #605B46;      
+  --color-light-text: #EDECE3; 
+  --color-subtitle: #7B7665;
+  --color-background: #FBFBFB;
+  --color-dots : #959284;
+  --radius-lg: 12px;
+  --radius-xl : 20px;
+}
+
+/* Apply it to the whole body */
+body {
+  font-family: var(--font-sans);
+  /* Use the variables we just defined */
+  background-color: var(--color-background);
+  color: var(--color-main);
+}
