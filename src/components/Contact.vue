@@ -24,7 +24,7 @@ const socialMediaLinks = [
     target="_blank" 
     class="hover:text-subtitle transition-colors text-main"
   >
-    <Icon :icon="link.icon" class="w-20 h-20" />
+    <Icon :icon="link.icon" class="md:w-20 md:h-20 w-14 h-14" />
   </a>
          
         </div>

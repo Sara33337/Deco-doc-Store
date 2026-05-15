@@ -47,7 +47,7 @@ const handleClick = (event) => {
     v-else-if="isExternalLink" 
     :href="href" 
     target="_blank"
-    class="btn-style"
+    class="inline-block px-10 bg-main text-white transition-opacity hover:opacity-90 rounded-lg cursor-pointer text-center"
   >
     {{ buttonText }}
   </a>

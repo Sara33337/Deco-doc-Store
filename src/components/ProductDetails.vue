@@ -3,13 +3,43 @@
 import type { Product, Category } from '@/types/product'; // Adjust path based on your types
 import PrimaryButton from './PrimaryButton.vue';
 import IncreaseButton from './IncreaseButton.vue';
-import { ref } from 'vue';
-defineProps<{
+import { computed, ref } from 'vue';
+
+const props = defineProps<{
     product: Product;
     category: Category | null;
 }>();
 
+const { product, category } = props;
 const quantity = ref(1);
+
+const adminWhatsappNumber = String(import.meta.env.VITE_ADMIN_WHATSAPP_NUMBER ?? '201065818575').replace(/\D/g, '');
+const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
+
+const orderMessage = computed(() => {
+  const lines = [
+    'مرحباً، أريد طلب المنتج التالي:',
+    `اسم المنتج: ${product.name}`,
+    `الفئة: ${category?.name ?? 'غير محددة'}`,
+    `الكمية: ${quantity.value}`,
+    `السعر لكل وحدة: ${product.price} ج.م`,
+    `المجموع: ${product.price * quantity.value} ج.م`,
+    `رابط المنتج: ${currentUrl}`
+  ];
+  return encodeURIComponent(lines.join('\n'));
+});
+
+const orderHref = computed(() => `https://wa.me/${adminWhatsappNumber}?text=${orderMessage.value}`);
+
+const contactMessage = computed(() => {
+  const lines = [
+    'مرحباً، أريد الاستفسار عن منتجاتكم.',
+    'ما هو استفسارك؟'
+  ];
+  return encodeURIComponent(lines.join('\n'));
+});
+
+const contactHref = computed(() => `https://wa.me/${adminWhatsappNumber}?text=${contactMessage.value}`);
 
 const handleIncrease = () => {
     quantity.value++;
@@ -24,27 +54,13 @@ const handleDecrease = () => {
 
 <template>
     <div dir="rtl" class="grid md:grid-cols-12 items-start">
-        <!-- Image Section -->
-        <!-- <div class="flex col-span-7"> -->
-            <!-- <div class="flex flex-col gap-4">
-                <div class="col-span-2 justify-center items-center">
-                    <img :src="product.imageUrl" :alt="product.name" class="w-full h-20 object-contain " />
 
-                </div>
-                <div class="col-span-2">
-                    <img :src="product.imageUrl" :alt="product.name" class="w-full h-20 object-contain" />
-
-                </div>
-            </div> -->
             <div class="p-6 col-span-7">
                 <img :src="product.imageUrl" :alt="product.name" class="w-full h-90 object-contain" />
             </div>
-        <!-- </div> -->
+    
 
-
-
-
-        <!-- Info Section -->
+      
         <div class="space-y-6 col-span-5">
             <div>
                 <p class="text-sm text-subtitle">{{ category?.name ?? 'فئة غير معروفة' }}</p>
@@ -69,13 +85,23 @@ const handleDecrease = () => {
                     خصم {{ product.discount }}
                 </span>
             </div>
+            
+           <div class="grid grid-cols-5 gap-4 w-full max-w-md"> <!-- تقدري تتحكمي في العرض الكلي من هنا مثل max-w-md -->
+    
 
-            <div class="flex gap-4 col-span-5">
-                <PrimaryButton buttonText="اطلب الآن" class="px-8 py-2.5 text-center" />
-                <IncreaseButton :amount="quantity" @increase="handleIncrease" @decrease="handleDecrease" />
-            </div>
+    <div class="col-span-5 flex gap-4">
+        <PrimaryButton :href="orderHref" buttonText="اطلب الآن" class="flex-1 py-2.5 text-center" />
+    
+        <IncreaseButton :amount="quantity" @increase="handleIncrease" @decrease="handleDecrease" class="flex-1" />
+    </div>
+    <a :href="contactHref" target="_blank" rel="noreferrer" class="col-span-5 flex items-center justify-center gap-2 px-10 py-2.5 rounded-lg border border-main text-main transition-all hover:bg-main hover:text-white cursor-pointer text-center">
+        <span>تواصل معنا</span>
+    </a>
+</div>
+          
 
-            <PrimaryButton buttonText="تواصل معنا" class="col-span-5 py-2.5 text-center" />
+
+           
 
         </div>
     </div>
