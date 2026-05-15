@@ -3,6 +3,8 @@ import { computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import ProductsSection from '@/components/ProductsSection.vue';
 import { useProductStore } from '@/stores/ProductStore';
+import Footer from '@/components/Footer.vue';
+import Navbar from '@/components/Navbar.vue';
 
 const route = useRoute();
 const store = useProductStore();
@@ -18,6 +20,7 @@ onMounted(async () => {
 </script>
 
 <template>
+ 
   <div class="wrapper" dir="rtl">
     <div class="mb-6">
       <h1 class="text-2xl font-bold text-main">
@@ -42,4 +45,5 @@ onMounted(async () => {
       </div>
     </div>
   </div>
+  <Footer/>
 </template>

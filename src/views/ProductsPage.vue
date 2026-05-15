@@ -4,6 +4,7 @@ import { useProductStore } from '@/stores/ProductStore';
 import ProductCard from '@/components/ProductCard.vue';
 import Title from '@/components/Title.vue';
 import CaregoryCard from '@/components/CategoryCard.vue';
+import Footer from '@/components/Footer.vue';
 
 const store = useProductStore();
 
@@ -34,12 +35,13 @@ onMounted(async () => {
       لم يتم العثور على أي منتجات.
     </div>
 
-    <div v-else class="grid grid-cols-2 md:grid-cols-4">
-      <ProductCard
+    <div v-else class="grid grid-cols-1 justify-items-center md:grid-cols-4">
+      <ProductCard 
         v-for="product in store.products"
         :key="product.id"
         :product="product"
       />
     </div>
   </div>
+  <Footer/>
 </template>

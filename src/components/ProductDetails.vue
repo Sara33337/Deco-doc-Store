@@ -53,7 +53,7 @@ const handleDecrease = () => {
 </script>
 
 <template>
-    <div dir="rtl" class="grid md:grid-cols-12 items-start">
+    <div dir="rtl" class="grid md:grid-cols-12 items-start ">
 
             <div class="p-6 col-span-7">
                 <img :src="product.imageUrl" :alt="product.name" class="w-full h-90 object-contain" />
@@ -64,12 +64,12 @@ const handleDecrease = () => {
         <div class="space-y-6 col-span-5">
             <div>
                 <p class="text-sm text-subtitle">{{ category?.name ?? 'فئة غير معروفة' }}</p>
-                <h1 class="text-3xl font-bold text-main mt-2">{{ product.name }}</h1>
+                <h1 class="md:text-2xl text-xl font-bold text-main mt-2">{{ product.name }}</h1>
             </div>
 
             <div class="space-y-3 text-right">
                 <p class="text-lg text-subtitle">{{ product.description }}</p>
-                <p class="text-2xl font-bold text-main">{{ product.price }} ج . م</p>
+                <p class="md:text-2xl text-xl font-bold text-main">{{ product.price }} ج . م</p>
                 <p class="text-sm text-muted">
                     {{ product.bestSeller ? 'منتج الأكثر مبيعاً' : product.inStock ? 'متوفر حالياً' : 'يتطلب طلب مسبق'
                     }}
@@ -86,7 +86,7 @@ const handleDecrease = () => {
                 </span>
             </div>
             
-           <div class="grid grid-cols-5 gap-4 w-full max-w-md"> <!-- تقدري تتحكمي في العرض الكلي من هنا مثل max-w-md -->
+           <div class="grid grid-cols-5 gap-4 w-full max-w-md justify-center "> <!-- تقدري تتحكمي في العرض الكلي من هنا مثل max-w-md -->
     
 
     <div class="col-span-5 flex gap-4">

@@ -4,6 +4,7 @@ import { useRoute } from 'vue-router';
 import { useProductStore } from '@/stores/ProductStore';
 import ProductDetails from '@/components/ProductDetails.vue'; 
 import CategoryCard from '@/components/CategoryCard.vue';
+import Footer from '@/components/Footer.vue';
 
 const route = useRoute();
 const store = useProductStore();
@@ -45,4 +46,5 @@ onMounted(async () => {
       :category="category" 
     />
   </div>
+  <Footer />
 </template>
