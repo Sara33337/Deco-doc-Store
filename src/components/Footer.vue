@@ -8,10 +8,10 @@ const socialMediaLinks = [
 ];
 
 const navLinks = [
-  { name: 'الرئيسية', href: '/#' },
-  { name: 'من نحن', href: '/#about' },
-  { name: 'خدماتنا', href: '/#services' },
-  { name: 'تواصل معنا', href: '/#contact' },
+  { name: 'الرئيسية', href: '/landing' },
+  { name: 'من نحن', href: '/landing#about' },
+  { name: 'خدماتنا', href: '/landing#services' },
+  { name: 'تواصل معنا', href: '/landing#contact' },
 ];
 
 const logoImage = '/images/logosvg.svg';

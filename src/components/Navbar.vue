@@ -2,23 +2,23 @@
 import { Icon } from '@iconify/vue';
 const navBarItems = [{
     name : 'الرئيسية',
-    href : '/#'
+    href : '/landing'
 },
 {
     name : 'من نحن',
-    href : '/#about'
+    href : '/landing#about'
 },
 {
     name : 'خدماتنا',
-    href : '/#services'
+    href : '/landing#services'
 },
 {
     name :'تواصل معنا',
-    href : '/#contact'
+    href : '/landing#contact'
 },
 {
     name : 'منتجاتنا',
-    href : '/explore',
+    href : '/',
     routerLink: true
 },
 ]

@@ -8,15 +8,16 @@ import AdminDashboard from '../views/AdminDashboard.vue'
 import AdminLoginPage from '../views/AdminLoginPage.vue'
 import { auth } from '@/firebase'
 const routes = [
+
   {
     path: '/',
-    name: 'landing',
-    component: LandingPage
-  },
-  {
-    path: '/explore',
     name: 'explore',
     component: ExplorePage
+  },
+  {
+    path: '/landing',
+    name: 'landing',
+    component: LandingPage
   },
   {
     path : '/products',
