@@ -4,7 +4,7 @@ import { Icon } from '@iconify/vue';
 import PrimaryButton from './PrimaryButton.vue';
 import { ref, onMounted } from 'vue';
 import Popup from './Popup.vue';
-import { db } from '@/firebase.js';
+import { db } from '@/firebase';
 import { collection, getDocs, query, orderBy, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const isVisible = ref(false);
@@ -98,7 +98,8 @@ onMounted(loadTestimonials);
     <div class="flex justify-center items-center m-10">
       <PrimaryButton
       @click="toggleVisibility"
-    button-text="اترك تعليقا"
+    buttonText="اترك تعليقا"
+    class="py-2.5"
     />
       
     </div>

@@ -9,6 +9,7 @@
   --color-subtitle: #7B7665;
   --color-background: #FBFBFB;
   --color-dots : #959284;
+  --color-card-background:#AFADA2;
   --radius-lg: 12px;
   --radius-xl : 20px;
 }
@@ -19,4 +20,18 @@ body {
   /* Use the variables we just defined */
   background-color: var(--color-background);
   color: var(--color-main);
+ 
+}
+
+.wrapper {
+  padding: 30px; /* الـ padding بتاعك */
+  background-clip: padding-box; 
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

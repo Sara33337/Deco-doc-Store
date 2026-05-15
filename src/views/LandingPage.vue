@@ -10,11 +10,11 @@ import Contact from '@/components/Contact.vue';
 
 </script>
 
-<template>
+<template bg-background>
   <Navbar/>
   <Hero/>
 
-  <div class="m-10 bg-background">
+  <div class="wrapper">
     <About/>
     <Services/>
     <Comment/>

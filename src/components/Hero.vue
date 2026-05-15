@@ -4,7 +4,7 @@ const heroImage = '/images/heroImage.svg';
 </script>
 
 <template>
-  <section class="relative min-h-screen w-full flex items-center justify-center overflow-hidden" dir="rtl">
+  <section class="relative min-h-screen w-full flex items-center justify-center overflow-hidden " dir="rtl">
     
     <div class="absolute inset-0 z-0">
       <div 
@@ -26,7 +26,7 @@ const heroImage = '/images/heroImage.svg';
         </p>
 
         <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-          <PrimaryButton buttonText="استكشف إبداعاتنا"/>
+          <PrimaryButton buttonText="استكشف إبداعاتنا" to="/explore" class="py-2.5"/>
         </div>
 
       </div>

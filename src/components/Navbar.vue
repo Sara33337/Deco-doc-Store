@@ -15,7 +15,12 @@ const navBarItems = [{
 {
     name :'تواصل معنا',
     href : '#contact'
-},]
+},
+{
+    name : 'منتجاتنا',
+    href : '/explore'
+},
+]
 
 const logoImage = '/images/logosvg.svg';
 
