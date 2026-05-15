@@ -69,9 +69,10 @@ const handleDecrease = () => {
 
             <div class="space-y-3 text-right">
                 <p class="text-lg text-subtitle">{{ product.description }}</p>
+                <p v-if="product.note" class="text-base text-main/90">{{ product.note }}</p>
                 <p class="md:text-2xl text-xl font-bold text-main">{{ product.price }} ج . م</p>
                 <p class="text-sm text-muted">
-                    {{ product.bestSeller ? 'منتج الأكثر مبيعاً' : product.inStock ? 'متوفر حالياً' : 'يتطلب طلب مسبق'
+                    {{ product.bestSeller ? 'منتج الأكثر مبيعاً' : product.inStock ? 'متوفر حالياً' : 'متاح التنفيذ بالطلب'
                     }}
                 </p>
             </div>

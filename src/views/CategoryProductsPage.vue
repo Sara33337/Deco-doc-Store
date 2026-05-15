@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
-import ProductsSection from '@/components/ProductsSection.vue';
 import { useProductStore } from '@/stores/ProductStore';
+import ProductCard from '@/components/ProductCard.vue';
 import Footer from '@/components/Footer.vue';
-import Navbar from '@/components/Navbar.vue';
 
 const route = useRoute();
 const store = useProductStore();
@@ -37,11 +36,20 @@ onMounted(async () => {
       فئة غير موجودة.
     </div>
 
+    
+    
+
    
     <div v-else>
-      <ProductsSection title="المنتجات" :products="products" :hideMore="true" class="flex-wrap" />
       <div v-if="products.length === 0" class="text-center text-subtitle py-16">
         لا توجد منتجات مرتبطة بهذه الفئة.
+      </div>
+      <div v-else class="grid grid-cols-2 gap-4 md:grid-cols-4 justify-items-center">
+        <ProductCard
+          v-for="product in products"
+          :key="product.id"
+          :product="product"
+        />
       </div>
     </div>
   </div>

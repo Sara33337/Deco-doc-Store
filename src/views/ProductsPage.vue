@@ -35,7 +35,7 @@ onMounted(async () => {
       لم يتم العثور على أي منتجات.
     </div>
 
-    <div v-else class="grid grid-cols-1 justify-items-center md:grid-cols-4">
+    <div v-else class="grid grid-cols-2 gap-4 justify-items-center md:grid-cols-4">
       <ProductCard 
         v-for="product in store.products"
         :key="product.id"

@@ -28,6 +28,7 @@ const productForm = ref({
   bestSeller: false,
   inStock: true,
   availableByOrder: false,
+  note: '',
   discount: 0,
   colors: ''
 });
@@ -54,6 +55,7 @@ const resetProductForm = () => {
     bestSeller: false,
     inStock: true,
     availableByOrder: false,
+    note: '',
     discount: 0,
     colors: ''
   };
@@ -94,6 +96,7 @@ const editProduct = (product: Product) => {
     bestSeller: product.bestSeller,
     inStock: product.inStock,
     availableByOrder: product.availableByOrder,
+    note: product.note ?? '',
     discount: product.discount ?? 0,
     colors: product.colors?.join(', ') ?? ''
   };
@@ -136,6 +139,7 @@ const submitProduct = async () => {
       bestSeller: Boolean(productForm.value.bestSeller),
       inStock: Boolean(productForm.value.inStock),
       availableByOrder: Boolean(productForm.value.availableByOrder),
+      note: productForm.value.note,
       discount: Number(productForm.value.discount) || 0,
       colors: productForm.value.colors
         ? productForm.value.colors.split(',').map(color => color.trim()).filter(Boolean)

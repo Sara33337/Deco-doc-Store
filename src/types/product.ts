@@ -7,6 +7,7 @@ export interface Product {
   bestSeller: boolean;
   inStock: boolean;
   availableByOrder: boolean;
+  note?: string;
   colors?: string[];
   productImageUrls?: string[];
   discount?: number;

@@ -17,7 +17,7 @@ const productLink = computed(() => ({
 </script>
 
 <template>
-    <router-link :to="productLink" class="shrink-0 w-60 md:w-70 flex flex-col gap-3 p-4 relative group" dir="rtl">
+    <router-link :to="productLink" class="shrink-0 w-50 md:w-70 flex flex-col gap-3 p-4 relative group" dir="rtl">
       <div v-if="product.bestSeller">
         <LabelCard label="الأكثر مبيعاً"/>
       </div>

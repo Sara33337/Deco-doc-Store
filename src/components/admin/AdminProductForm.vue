@@ -11,6 +11,7 @@ interface ProductForm {
   bestSeller: boolean;
   inStock: boolean;
   availableByOrder: boolean;
+  note: string;
   discount: number;
   colors: string;
 }
@@ -76,6 +77,11 @@ const handleImageChange = (event: Event) => {
       <label class="input-group w-full">
         <span>الوصف</span>
         <textarea v-model="form.description" class="textarea textarea-bordered w-full" rows="3"></textarea>
+      </label>
+
+      <label class="input-group w-full">
+        <span>ملاحظة المنتج</span>
+        <textarea v-model="form.note" class="textarea textarea-bordered w-full" rows="2" placeholder="ملاحظة إضافية تظهر في تفاصيل المنتج"></textarea>
       </label>
 
       <div class="grid gap-4 md:grid-cols-2">
